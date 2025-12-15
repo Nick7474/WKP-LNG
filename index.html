@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>서부발전 공주천연가스 발전소 대시보드</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+      
+      body {
+        font-family: 'Noto Sans KR', sans-serif;
+        background-color: #111118;
+        color: #ffffff;
+        overflow: hidden; /* Optimize for 1920x1080 fixed display */
+      }
+      
+      /* Custom scrollbar for card content */
+      
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+      }
+      
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+      }
+      
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 3px;
+      }
+      
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+      
+      /* Blinking animation for alert */
+      
+      @keyframes blink-red {
+        0%, 100% { box-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000 inset; border-color: #ff0000; }
+        50% { box-shadow: 0 0 2px #500000, 0 0 5px #500000 inset; border-color: #800000; }
+      }
+      
+      .animate-alert-blink {
+        animation: blink-red 1.5s infinite;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              gray: {
+                850: '#1f2937',
+                900: '#111827',
+                950: '#0b0f19',
+              },
+              slate: {
+                850: '#1e293b',
+                900: '#0f172a',
+              },
+              brand: {
+                dark: '#0f1014', // Main bg
+                panel: '#1a1b23', // Card bg
+                blue: '#00aaff',
+                green: '#00c853',
+                red: '#ff3d00',
+                gray: '#4b5563',
+              }
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "recharts": "https://esm.sh/recharts@^3.5.1",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
